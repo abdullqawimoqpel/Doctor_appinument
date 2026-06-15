@@ -1,6 +1,17 @@
-# Doctor_appinument
+# Doctor_appinument 🩺
 
-تطبيق شامل لحجز وإدارة مواعيد العيادات الطبية. (Comprehensive Doctor Appointment System)
+تطبيق شامل واحترافي لحجز وإدارة مواعيد العيادات الطبية، مصمم لتسهيل تجربة المرضى والأطباء على حد سواء.  
+يدعم النظام ميزات متقدمة تشمل إدارة الحجوزات، والدفع الإلكتروني، ولوحات تحكم مخصصة.
+
+يعتمد المشروع على بنية تحتية قوية (Backend) باستخدام:
+- **[Supabase](https://supabase.com/)**: لإدارة قواعد البيانات (PostgreSQL)، الاستيثاق (Authentication)، وسياسات الأمان.
+- **[Next.js App Router](https://nextjs.org/)**: للتعامل مع الـ Server Actions والـ API Routes، مما يوفر أداءً سريعاً وتجربة ريندرنق متكاملة.
+- **[Stripe](https://stripe.com/)**: لمعالجة المدفوعات بشكل آمن وموثوق.
+
+---
+
+> **Comprehensive Doctor Appointment System**  
+> A professional full-stack application designed to streamline clinic appointments, featuring secure payments, robust database management, and optimized API routing.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
