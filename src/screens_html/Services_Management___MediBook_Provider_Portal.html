@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBook Pro - Services Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#c6c6cd",
+                        "surface-variant": "#d3e4fe",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "on-surface-variant": "#45464d",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#005049",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed": "#89f5e7",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary-container": "#818486",
+                        "primary": "#000000",
+                        "secondary": "#006a61",
+                        "secondary-container": "#86f2e4",
+                        "tertiary-container": "#191c1e",
+                        "surface": "#f8f9ff",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#76777d",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#131b2e",
+                        "surface-tint": "#565e74",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-container-low": "#eff4ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary-fixed": "#00201d",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-container": "#006f66"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "1.5rem",
+                        "stack-sm": "0.5rem",
+                        "margin-mobile": "1rem",
+                        "stack-lg": "2rem",
+                        "stack-md": "1rem",
+                        "container-max": "1280px",
+                        "margin-desktop": "2.5rem"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar (from JSON) -->
+<nav class="bg-surface shadow-sm fixed left-0 top-0 h-screen w-[280px] flex flex-col border-r border-outline-variant z-40 hidden md:flex">
+<div class="p-gutter border-b border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="Provider Profile Picture" class="w-full h-full object-cover" data-alt="A professional headshot portrait of a friendly doctor wearing a white coat and stethoscope, set against a bright, clean clinical background. The lighting is soft and flattering, emphasizing approachability and competence. The color palette is bright and modern, aligning with a premium healthcare aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZOVO03j3j1qyqBsypeMgrdKVIE6oiU7Lc_tiMkNNikwkm9aHH6bLkf6n4pKh1Zr2SZhXeJ4hHWRo4SCBN7XBApyAH9_KV1yNaKd8ZeOq7sp5iV_5brK0-p8aGyySYrv-GSSQSBiPttqwpUr9yJ9-RxssCWUXHGKPSJ2pGIgcAgIcbPNKn_v-TfHtDjGJYwrYxyC2DTDzvvzVeCARduE0pGXiH7wPfREknDt4w4-9FGCM4d-Xsuzg1d9HIRLVKzczxbtGOHCrJSA"/>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary">MediBook Pro</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Provider Portal</p>
+</div>
+</div>
+<div class="p-gutter pb-stack-sm">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded flex items-center justify-center gap-2 hover:bg-on-primary-fixed transition-colors font-label-md text-label-md cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Appointment
+            </button>
+</div>
+<ul class="flex-1 overflow-y-auto py-stack-md flex flex-col gap-1 px-3">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                    Appointments
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+                    Schedule
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Patients
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-container-low text-primary font-bold border-r-4 border-primary font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services" data-weight="fill">medical_services</span>
+                    Services
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Analytics
+                </a>
+</li>
+</ul>
+<div class="p-3 border-t border-outline-variant/30 mt-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-md text-body-md cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Mobile Header -->
+<header class="md:hidden bg-surface-container-lowest shadow-sm fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">medical_services</span>
+<span class="font-headline-sm text-headline-sm text-primary">MediBook Pro</span>
+</div>
+<button class="text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] w-full min-h-screen pb-20 md:pb-0 pt-[72px] md:pt-0">
+<!-- Page Header -->
+<div class="bg-surface-container-lowest px-margin-mobile md:px-margin-desktop py-stack-lg border-b border-outline-variant/20 shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.02)]">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary">Services Management</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Manage your practice offerings, durations, and pricing.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md py-3 px-6 rounded flex items-center justify-center gap-2 hover:bg-on-primary-fixed transition-colors h-[48px]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                    Add New Service
+                </button>
+</div>
+</div>
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto">
+<!-- Quick Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md mb-stack-lg">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/30 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Services</p>
+<p class="font-headline-lg text-headline-lg text-primary">12</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/30 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Most Booked</p>
+<p class="font-headline-sm text-headline-sm text-primary truncate">Gen. Consultation</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/30 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg. Consultation Fee</p>
+<p class="font-headline-lg text-headline-lg text-primary">$145</p>
+</div>
+</div>
+</div>
+<!-- Services List Header/Filters -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-stack-md gap-4">
+<h3 class="font-headline-md text-headline-md text-primary">Active Offerings</h3>
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded bg-surface-container-lowest focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-sm text-body-sm transition-colors text-on-surface" placeholder="Search services..." type="text"/>
+</div>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-stack-md">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/30 flex flex-col h-full hover:shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">stethoscope</span>
+</div>
+<span class="bg-secondary-fixed/20 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">Active</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">General Consultation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">Standard evaluation for new or returning patients presenting with general symptoms.</p>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                30 min
+                            </div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+                                $150
+                            </div>
+</div>
+</div>
+<div class="flex justify-end gap-2 border-t border-outline-variant/20 pt-4 mt-auto">
+<button aria-label="Edit Service" class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Delete Service" class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/30 flex flex-col h-full hover:shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">vaccines</span>
+</div>
+<span class="bg-secondary-fixed/20 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">Active</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Annual Vaccination</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">Administration of seasonal or required annual vaccines. Cost includes common vaccines.</p>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                15 min
+                            </div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+                                $85
+                            </div>
+</div>
+</div>
+<div class="flex justify-end gap-2 border-t border-outline-variant/20 pt-4 mt-auto">
+<button aria-label="Edit Service" class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Delete Service" class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/30 flex flex-col h-full hover:shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">monitor_heart</span>
+</div>
+<span class="bg-outline-variant/20 text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded">Draft</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Comprehensive Physical</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">In-depth physical examination including basic lab work review and lifestyle counseling.</p>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                60 min
+                            </div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+                                $250
+                            </div>
+</div>
+</div>
+<div class="flex justify-end gap-2 border-t border-outline-variant/20 pt-4 mt-auto">
+<button aria-label="Edit Service" class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Delete Service" class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Overlay/Modal for 'Add New Service' (Hidden by default, shown for design demonstration) -->
+<!-- In a real app, this would be toggled via JS -->
+<div class="fixed inset-0 bg-primary/40 z-[100] flex items-center justify-center p-4 backdrop-blur-sm hidden" id="addServiceModal">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] w-full max-w-lg overflow-hidden flex flex-col max-h-[921px]">
+<div class="px-6 py-4 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-lowest sticky top-0">
+<h3 class="font-headline-md text-headline-md text-primary">Add New Service</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors" onclick="document.getElementById('addServiceModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 overflow-y-auto flex-1">
+<form class="space-y-5">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1" for="serviceName">Service Name</label>
+<input class="w-full px-3 py-2 border border-outline-variant rounded focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md bg-surface-container-lowest text-on-surface" id="serviceName" placeholder="e.g. Telehealth Follow-up" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1" for="serviceDesc">Description</label>
+<textarea class="w-full px-3 py-2 border border-outline-variant rounded focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md bg-surface-container-lowest text-on-surface" id="serviceDesc" placeholder="Brief description of what this service includes..." rows="3"></textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1" for="serviceDuration">Duration (Minutes)</label>
+<select class="w-full px-3 py-2 border border-outline-variant rounded focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md bg-surface-container-lowest text-on-surface appearance-none" id="serviceDuration">
+<option value="15">15 min</option>
+<option selected="" value="30">30 min</option>
+<option value="45">45 min</option>
+<option value="60">60 min</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1" for="serviceFee">Fee ($)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md text-body-md">$</span>
+<input class="w-full pl-8 pr-3 py-2 border border-outline-variant rounded focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-body-md bg-surface-container-lowest text-on-surface" id="serviceFee" placeholder="0.00" type="number"/>
+</div>
+</div>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface mb-2">Status</span>
+<div class="flex gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4 border-outline-variant" name="status" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">Active</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="text-primary focus:ring-primary h-4 w-4 border-outline-variant" name="status" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">Draft</span>
+</label>
+</div>
+</div>
+</form>
+</div>
+<div class="px-6 py-4 border-t border-outline-variant/20 bg-surface flex justify-end gap-3">
+<button class="px-5 py-2 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded transition-colors" onclick="document.getElementById('addServiceModal').classList.add('hidden')">Cancel</button>
+<button class="px-5 py-2 font-label-md text-label-md bg-primary text-on-primary rounded hover:bg-on-primary-fixed transition-colors">Save Service</button>
+</div>
+</div>
+</div>
+</body></html>

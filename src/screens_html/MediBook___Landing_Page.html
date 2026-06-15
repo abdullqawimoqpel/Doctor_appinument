@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBook - Healthcare at your fingertips</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c6c6cd",
+                        "surface-variant": "#d3e4fe",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "on-surface-variant": "#45464d",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#005049",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed": "#89f5e7",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary-container": "#818486",
+                        "primary": "#000000",
+                        "secondary": "#006a61",
+                        "secondary-container": "#86f2e4",
+                        "tertiary-container": "#191c1e",
+                        "surface": "#f8f9ff",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#76777d",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#131b2e",
+                        "surface-tint": "#565e74",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-container-low": "#eff4ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary-fixed": "#00201d",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-container": "#006f66"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "stack-sm": "0.5rem",
+                        "margin-mobile": "1rem",
+                        "stack-lg": "2rem",
+                        "stack-md": "1rem",
+                        "container-max": "1280px",
+                        "margin-desktop": "2.5rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest shadow-sm flex justify-between items-center w-full px-gutter py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                MediBook
+            </a>
+<div class="hidden md:flex gap-6">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md duration-200 ease-in-out" href="#">Find Doctors</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md duration-200 ease-in-out" href="#">Specialties</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md duration-200 ease-in-out" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md duration-200 ease-in-out" href="#">Help</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md">Join as Provider</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:bg-primary-container transition-colors">Sign In</button>
+<div class="hidden md:flex gap-4 ml-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="w-full">
+<section class="w-full max-w-container-max mx-auto px-gutter py-stack-lg md:py-20 lg:py-32 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute inset-0 -z-10 bg-gradient-to-br from-surface-container-high via-surface-container-low to-background opacity-50 rounded-[3rem] transform -skew-y-3 scale-110"></div>
+<div class="text-center max-w-3xl space-y-stack-md z-10 relative">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-4 shadow-sm border border-outline-variant/20">Assurance through Clarity</span>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight leading-tight">Healthcare at your fingertips.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Find and book appointments with top-rated doctors, specialists, and healthcare providers near you. Simple, transparent, and secure.</p>
+<!-- Search Bar Module -->
+<div class="mt-8 md:mt-12 w-full max-w-4xl mx-auto bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/30 p-2 md:p-3 flex flex-col md:flex-row gap-2 relative z-20">
+<div class="flex-1 flex items-center bg-background rounded-lg border border-outline-variant focus-within:border-secondary focus-within:ring-1 focus-within:ring-secondary transition-all px-4 py-3">
+<span class="material-symbols-outlined text-on-surface-variant mr-3">search</span>
+<input class="w-full bg-transparent border-none outline-none font-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:ring-0 p-0" placeholder="Condition, procedure, or doctor name" type="text"/>
+</div>
+<div class="hidden md:block w-[1px] bg-outline-variant/30 self-stretch my-2"></div>
+<div class="flex-1 flex items-center bg-background rounded-lg border border-outline-variant focus-within:border-secondary focus-within:ring-1 focus-within:ring-secondary transition-all px-4 py-3">
+<span class="material-symbols-outlined text-on-surface-variant mr-3">location_on</span>
+<input class="w-full bg-transparent border-none outline-none font-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:ring-0 p-0" placeholder="City, state, or zip code" type="text"/>
+<button class="text-secondary hover:text-on-secondary-container flex items-center justify-center p-1 rounded-full hover:bg-secondary-container/50 transition-colors">
+<span class="material-symbols-outlined text-sm">my_location</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary rounded-lg px-8 py-3 md:py-0 font-label-md text-label-md hover:bg-primary-container transition-colors shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
+                        Search
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-on-surface-variant font-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Verified Reviews</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Secure Booking</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> 24/7 Support</span>
+</div>
+</div>
+<!-- Bento Grid - Quick Links -->
+<div class="w-full max-w-container-max mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+<a class="group bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between h-full min-h-[160px]" href="#">
+<div class="flex items-start justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Primary Care</h3>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">stethoscope</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-4">Routine checkups and preventive health.</p>
+</a>
+<a class="group bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between h-full min-h-[160px]" href="#">
+<div class="flex items-start justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Dentistry</h3>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">dentistry</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-4">Cleanings, exams, and dental procedures.</p>
+</a>
+<a class="group bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between h-full min-h-[160px]" href="#">
+<div class="flex items-start justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Mental Health</h3>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-4">Therapy, counseling, and psychiatric care.</p>
+</a>
+</div>
+</section>
+<!-- How it works -->
+<section class="w-full bg-surface-container-low py-stack-lg md:py-24 border-y border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">How it works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mb-16">Booking your next healthcare appointment is straightforward and secure. Follow these three simple steps.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
+<!-- Connecting line for desktop -->
+<div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-[2px] bg-outline-variant/30 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-24 h-24 bg-surface-container-lowest rounded-full shadow-sm border border-outline-variant/30 flex items-center justify-center mb-6 text-primary group-hover:text-secondary transition-colors relative">
+<span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md shadow-sm">1</span>
+<span class="material-symbols-outlined text-[40px] text-secondary">search</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Find your doctor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[250px] text-center">Search by specialty, location, or insurance to find the perfect match for your needs.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-24 h-24 bg-surface-container-lowest rounded-full shadow-sm border border-outline-variant/30 flex items-center justify-center mb-6 text-primary group-hover:text-secondary transition-colors relative">
+<span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md shadow-sm">2</span>
+<span class="material-symbols-outlined text-[40px] text-secondary">calendar_month</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Pick a time</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[250px] text-center">View real-time availability and select a convenient time slot that fits your schedule.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-24 h-24 bg-surface-container-lowest rounded-full shadow-sm border border-outline-variant/30 flex items-center justify-center mb-6 text-primary group-hover:text-secondary transition-colors relative">
+<span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md shadow-sm">3</span>
+<span class="material-symbols-outlined text-[40px] text-secondary">check_circle</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Book instantly</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[250px] text-center">Confirm your appointment securely online and receive helpful reminders.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high w-full py-stack-lg px-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto mt-stack-lg border-t border-outline-variant/20">
+<div class="mb-4 md:mb-0 text-center md:text-left">
+<a class="font-headline-sm text-headline-sm text-primary flex items-center justify-center md:justify-start gap-2 mb-2" href="#">
+<span class="material-symbols-outlined text-secondary">medical_services</span>
+                MediBook
+            </a>
+<p class="font-body-sm text-body-sm text-on-surface">© 2024 MediBook Health. Assurance through Clarity.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline decoration-2 transition-all" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline decoration-2 transition-all" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline decoration-2 transition-all" href="#">Cookie Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline decoration-2 transition-all" href="#">Contact Support</a>
+</div>
+</footer>
+</body></html>
